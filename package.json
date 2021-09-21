@@ -13,6 +13,7 @@
   "author": "Raheem Abolfathzadeh",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^10.0.0",
     "env": "^0.0.2",
