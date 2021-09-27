@@ -14,9 +14,16 @@ import Message from "../components/Message";
 import { addToCart } from "../actions/cartActions";
 
 const CartScreen = ({ match, location, history }) => {
-  //const productId = match.product.id;
+  const productId = match.product.id;
+  const qty = location.search ? Number(location.search("=")[1]) : 1;
 
-  const qty = location.search;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (productId) {
+      dispatch(addToCart(productId, qty));
+    }
+  }, [dispatch, productId, qty]);
 
   console.log(qty);
 
